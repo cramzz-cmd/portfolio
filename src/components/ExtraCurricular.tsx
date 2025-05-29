@@ -43,8 +43,7 @@ const ExtraCurricular = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-5xl font-bold mb-12 text-[#FF6720] text-center"
-          style={{ fontFamily: "'Porsche Next', sans-serif" }}
+          className="text-5xl font-bold mb-12 text-[#FF6720] text-center tracking-tight"
         >
           EXTRA CURRICULAR
         </motion.h2>

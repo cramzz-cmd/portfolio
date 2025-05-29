@@ -104,13 +104,7 @@ const HeroSection = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1
-            className="text-5xl md:text-7xl font-bold text-[#E0E0E0] tracking-tighter"
-            style={{
-              fontFamily: "'Porsche Next', sans-serif",
-              letterSpacing: "1px",
-            }}
-          >
+          <h1 className="text-5xl md:text-7xl font-bold text-[#E0E0E0] tracking-tighter">
             {name}
           </h1>
           <div className="graffiti-drips absolute -bottom-6 left-0 right-0 h-6 overflow-hidden">
@@ -141,13 +135,7 @@ const HeroSection = ({
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          <h2
-            className="text-2xl md:text-3xl text-[#A4C3CB] font-medium"
-            style={{
-              fontFamily: "'Porsche Next', sans-serif",
-              letterSpacing: "2px",
-            }}
-          >
+          <h2 className="text-2xl md:text-3xl text-[#A4C3CB] font-medium tracking-wider">
             {tagline}
           </h2>
         </motion.div>

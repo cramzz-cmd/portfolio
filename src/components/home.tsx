@@ -67,10 +67,7 @@ const Home = () => {
                 />
               </svg>
             </motion.div>
-            <span
-              className="font-bold text-xl"
-              style={{ fontFamily: "'Porsche Next', sans-serif" }}
-            >
+            <span className="font-bold text-xl tracking-wide">
               DRIVEN BY DESIGN
             </span>
           </div>
@@ -122,8 +119,7 @@ const Home = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-[#FF6720]"
-            style={{ fontFamily: "'Porsche Next', sans-serif" }}
+            className="text-5xl font-bold mb-12 text-[#FF6720] tracking-tight"
           >
             ABOUT ME
           </motion.h2>
