@@ -22,10 +22,10 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   name = "ABHINAV POLIMERA",
-  tagline = "DRIVEN BY DESIGN",
+  tagline = "COMPUTER SCIENCE ENGINEER",
   socialLinks = {
     github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/abhinav-jagan-polimera-411b431b1/",
     twitter: "https://twitter.com",
     instagram: "https://instagram.com",
   },
@@ -96,7 +96,7 @@ const HeroSection = ({
       </div>
 
       {/* Content Container (40%) */}
-      <div className="w-full md:w-2/5 h-1/2 md:h-full bg-[#121820] flex flex-col justify-center items-center p-8">
+      <div className="w-full md:w-2/5 h-1/2 md:h-full bg-[#121820] flex flex-col justify-center items-center p-8 text-center">
         {/* Animated Graffiti Name */}
         <motion.div
           className="mb-6 relative"
@@ -107,7 +107,7 @@ const HeroSection = ({
           <h1
             className="text-5xl md:text-7xl font-bold text-[#E0E0E0] tracking-tighter"
             style={{
-              fontFamily: "'Montserrat', sans-serif",
+              fontFamily: "'Porsche Next', sans-serif",
               letterSpacing: "1px",
             }}
           >
@@ -144,7 +144,7 @@ const HeroSection = ({
           <h2
             className="text-2xl md:text-3xl text-[#A4C3CB] font-medium"
             style={{
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: "'Porsche Next', sans-serif",
               letterSpacing: "2px",
             }}
           >
@@ -224,18 +224,21 @@ const HeroSection = ({
           )}
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Interactive Cursor Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ delay: 1.2, duration: 1.5, repeat: Infinity }}
+          animate={{ opacity: 1, rotate: [0, 5, 0, -5, 0] }}
+          transition={{ delay: 1.2, duration: 3, repeat: Infinity }}
+          whileHover={{ scale: 1.2 }}
         >
-          <div className="w-6 h-10 border-2 border-[#A4C3CB] rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-[#FF6720] rounded-full mt-2"></div>
+          <div className="w-12 h-12 border-2 border-[#FF6720] rounded-full flex items-center justify-center cursor-pointer">
+            <div className="w-8 h-8 bg-[#FF6720]/20 rounded-full flex items-center justify-center">
+              <div className="w-4 h-4 bg-[#FF6720] rounded-full"></div>
+            </div>
           </div>
           <p className="text-xs text-[#A4C3CB] mt-2 text-center font-light">
-            SCROLL
+            EXPLORE
           </p>
         </motion.div>
       </div>

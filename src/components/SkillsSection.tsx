@@ -30,98 +30,74 @@ const SkillsSection = () => {
   const [activeGear, setActiveGear] = useState<number | null>(null);
   const [animateNeedles, setAnimateNeedles] = useState(false);
 
-  // Default skills data
+  // Skills data from resume
   const skills: Skill[] = [
     // Frontend
     {
       name: "React",
-      level: 90,
-      category: "frontend",
-      description: "Advanced component architecture and state management",
-    },
-    {
-      name: "TypeScript",
       level: 85,
       category: "frontend",
-      description: "Type-safe development with advanced patterns",
+      description: "Component architecture and state management",
     },
     {
-      name: "CSS/SCSS",
-      level: 80,
+      name: "JavaScript",
+      level: 90,
       category: "frontend",
-      description: "Responsive layouts and animations",
+      description: "ES6+, DOM manipulation, async programming",
     },
     {
-      name: "Three.js",
-      level: 75,
+      name: "HTML/CSS",
+      level: 85,
       category: "frontend",
-      description: "3D rendering and interactive experiences",
+      description: "Responsive design, CSS frameworks, animations",
     },
 
     // Backend
     {
-      name: "Node.js",
-      level: 85,
+      name: "Python",
+      level: 90,
       category: "backend",
-      description: "RESTful APIs and server architecture",
+      description: "Data processing, APIs, automation",
     },
     {
-      name: "GraphQL",
-      level: 70,
+      name: "Java",
+      level: 80,
       category: "backend",
-      description: "Schema design and resolvers",
+      description: "Object-oriented programming, Spring Boot",
     },
     {
-      name: "PostgreSQL",
+      name: "SQL",
       level: 75,
       category: "backend",
-      description: "Database design and optimization",
-    },
-    {
-      name: "AWS",
-      level: 65,
-      category: "backend",
-      description: "Cloud infrastructure and deployment",
+      description: "Database design and queries",
     },
 
     // Design
     {
-      name: "Figma",
+      name: "Adobe Suite",
       level: 80,
       category: "design",
-      description: "UI/UX prototyping and design systems",
+      description: "Photoshop, Illustrator for graphic design",
     },
     {
-      name: "Motion Design",
-      level: 70,
-      category: "design",
-      description: "Animation principles and implementation",
-    },
-    {
-      name: "Design Systems",
+      name: "Photography",
       level: 85,
       category: "design",
-      description: "Component libraries and style guides",
+      description: "Composition, editing, visual storytelling",
     },
 
     // Performance
     {
-      name: "Optimization",
+      name: "ML/AI",
       level: 80,
       category: "performance",
-      description: "Frontend performance and bundle optimization",
+      description: "Computer vision, neural networks, YOLO",
     },
     {
-      name: "Testing",
-      level: 75,
+      name: "OpenCV",
+      level: 85,
       category: "performance",
-      description: "Unit, integration, and E2E testing",
-    },
-    {
-      name: "CI/CD",
-      level: 70,
-      category: "performance",
-      description: "Automated workflows and deployments",
+      description: "Image processing and computer vision",
     },
   ];
 
@@ -131,25 +107,25 @@ const SkillsSection = () => {
       gear: 1,
       category: "frontend",
       icon: <Globe className="h-5 w-5" />,
-      label: "Frontend",
+      label: "Development",
     },
     {
       gear: 2,
       category: "backend",
       icon: <Database className="h-5 w-5" />,
-      label: "Backend",
+      label: "Languages",
     },
     {
       gear: 3,
       category: "design",
       icon: <Palette className="h-5 w-5" />,
-      label: "Design",
+      label: "Creative",
     },
     {
       gear: 4,
       category: "performance",
       icon: <Gauge className="h-5 w-5" />,
-      label: "Performance",
+      label: "Technical",
     },
     {
       gear: 5,
@@ -196,19 +172,6 @@ const SkillsSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl font-bold mb-16 text-center text-[#E0E0E0] font-['Poppins', sans-serif]">
-          <span className="relative inline-block">
-            Technical Specs
-            <motion.span
-              className="absolute -bottom-2 left-0 h-1 bg-[#FF6720] rounded-full"
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-            />
-          </span>
-        </h2>
-
         {/* Gearbox Selector */}
         <div className="mb-16">
           <h3 className="text-xl font-semibold mb-4 text-center text-[#E0E0E0]">
@@ -285,11 +248,11 @@ const SkillsSection = () => {
                             : -90,
                         }}
                         transition={{
-                          duration: 2.2,
-                          delay: index * 0.3,
+                          duration: 1.5,
+                          delay: index * 0.2,
                           type: "spring",
-                          stiffness: 60,
-                          damping: 15,
+                          stiffness: 120,
+                          damping: 12,
                         }}
                       />
 
@@ -335,22 +298,6 @@ const SkillsSection = () => {
               </Card>
             </motion.div>
           ))}
-        </div>
-
-        {/* Engine Blueprint Background Element */}
-        <div className="mt-20 flex justify-center">
-          <motion.div
-            className="relative w-full max-w-2xl h-40 opacity-20"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80"
-              alt="Engine Blueprint"
-              className="w-full h-full object-contain"
-            />
-          </motion.div>
         </div>
       </div>
     </section>

@@ -95,9 +95,9 @@ const ProjectTile = ({
   };
 
   const categoryDescriptions = {
-    Carrera: "High-Speed Projects",
-    Targa: "UI/UX Designs",
-    Turbo: "Complex Systems",
+    Carrera: "Web Development",
+    Targa: "Backend Systems",
+    Turbo: "Research & ML",
   };
 
   return (
@@ -157,47 +157,23 @@ const ProjectTile = ({
         </CardContent>
       </Card>
 
-      {/* Graffiti-style border that appears on hover */}
+      {/* Elegant border that appears on hover */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="absolute inset-0 border-4 border-transparent">
+        <div className="absolute inset-0 border-2 border-[#FF6720] rounded-lg">
           <div
             className="absolute inset-0"
             style={{
               background:
-                "url(https://images.unsplash.com/photo-1569875770588-8b4e4d17d05f?w=400&q=80) center/cover",
+                "linear-gradient(45deg, rgba(255,103,32,0.2), transparent)",
               mixBlendMode: "overlay",
               opacity: 0.6,
-              mask: "url(\"data:image/svg+xml,%3Csvg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%' height='100%' fill='none' stroke='white' stroke-width='8' stroke-dasharray='20,10,40,15' stroke-linecap='round' /%3E%3C/svg%3E\") 0 0/100% 100%",
-              WebkitMask:
-                "url(\"data:image/svg+xml,%3Csvg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%' height='100%' fill='none' stroke='white' stroke-width='8' stroke-dasharray='20,10,40,15' stroke-linecap='round' /%3E%3C/svg%3E\") 0 0/100% 100%",
             }}
           />
-        </div>
-        <div className="absolute top-0 left-0 w-20 h-20 -translate-x-1/4 -translate-y-1/4">
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path
-              d="M10,50 Q30,20 50,50 T90,50"
-              fill="none"
-              stroke="#FF1801"
-              strokeWidth="4"
-            />
-            <circle cx="90" cy="50" r="8" fill="#FF6720" />
-          </svg>
-        </div>
-        <div className="absolute bottom-0 right-0 w-16 h-16 translate-x-1/4 translate-y-1/4">
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path
-              d="M20,20 L80,80 M20,80 L80,20"
-              stroke="#FF1801"
-              strokeWidth="6"
-              strokeLinecap="round"
-            />
-          </svg>
         </div>
       </motion.div>
 

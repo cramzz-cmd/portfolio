@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import HeroSection from "./HeroSection";
 import ProjectsGallery from "./ProjectsGallery";
 import SkillsSection from "./SkillsSection";
+import PublicationsSection from "./PublicationsSection";
+import ExtraCurricular from "./ExtraCurricular";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { ChevronDown, Mail, Github, Linkedin, Instagram } from "lucide-react";
@@ -65,7 +67,12 @@ const Home = () => {
                 />
               </svg>
             </motion.div>
-            <span className="font-bold text-xl">DRIVEN BY DESIGN</span>
+            <span
+              className="font-bold text-xl"
+              style={{ fontFamily: "'Porsche Next', sans-serif" }}
+            >
+              DRIVEN BY DESIGN
+            </span>
           </div>
           <div className="hidden md:flex space-x-6 items-center">
             <a href="#about" className="hover:text-[#FF6720] transition-colors">
@@ -84,18 +91,12 @@ const Home = () => {
               Skills
             </a>
             <a
-              href="#contact"
+              href="#publications"
               className="hover:text-[#FF6720] transition-colors"
             >
-              Contact
+              Publications
             </a>
           </div>
-          <Button
-            variant="outline"
-            className="border-[#FF6720] text-[#FF6720] hover:bg-[#FF6720] hover:text-white"
-          >
-            <Mail className="mr-2 h-4 w-4" /> Get In Touch
-          </Button>
         </div>
       </nav>
 
@@ -122,7 +123,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-5xl font-bold mb-12 text-[#FF6720]"
-            style={{ fontFamily: "'Urban Decay', sans-serif" }}
+            style={{ fontFamily: "'Porsche Next', sans-serif" }}
           >
             ABOUT ME
           </motion.h2>
@@ -136,11 +137,10 @@ const Home = () => {
               className="bg-[#1A2430] p-6 rounded-lg relative overflow-hidden shadow-lg"
             >
               <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#FF6720]/20 rounded-full blur-xl"></div>
-              <h3 className="text-2xl font-bold mb-4">Career Start</h3>
+              <h3 className="text-2xl font-bold mb-4">Education</h3>
               <p className="text-[#A4C3CB]">
-                Started my journey in web development with a passion for
-                creating visually stunning and high-performance applications,
-                just like the engineering precision of a Porsche 911.
+                Birla Institute of Science and Technology, Pilani - Hyderabad
+                Campus (2020-2024) B.E Computer Science - 8.19/10 CGPA
               </p>
             </motion.div>
 
@@ -152,11 +152,11 @@ const Home = () => {
               className="bg-[#1A2430] p-6 rounded-lg relative overflow-hidden shadow-lg"
             >
               <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#FF6720]/20 rounded-full blur-xl"></div>
-              <h3 className="text-2xl font-bold mb-4">Awards</h3>
+              <h3 className="text-2xl font-bold mb-4">Experience</h3>
               <p className="text-[#A4C3CB]">
-                Recognized for innovative approaches to UI/UX design and
-                development, combining technical excellence with artistic
-                expression - where engineering meets street art.
+                Cisco, Bangalore (Jan 2024 - June 2024): Technical Intern in
+                Distributed Systems organization. Optimized test cases for
+                healthcheck and file transfer in router OS.
               </p>
             </motion.div>
 
@@ -168,11 +168,11 @@ const Home = () => {
               className="bg-[#1A2430] p-6 rounded-lg relative overflow-hidden shadow-lg"
             >
               <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#FF6720]/20 rounded-full blur-xl"></div>
-              <h3 className="text-2xl font-bold mb-4">Current Role</h3>
+              <h3 className="text-2xl font-bold mb-4">Internship</h3>
               <p className="text-[#A4C3CB]">
-                Currently focused on creating high-performance web applications
-                that combine cutting-edge technology with striking visual
-                design, pushing the boundaries of what's possible.
+                Shris Infotech, Hyderabad (Jun 2022 - Jul 2022): Software
+                Intern. Developed a face recognition app using Python libraries
+                (deepface, OpenCV, retina-face) and Flutter.
               </p>
             </motion.div>
           </div>
@@ -188,9 +188,30 @@ const Home = () => {
 
                 {/* Timeline Items */}
                 <div className="relative z-10">
-                  {[2018, 2020, 2022, 2024].map((year, index) => (
+                  {[
+                    {
+                      year: 2020,
+                      event:
+                        "Started B.E Computer Science at BITS Pilani, Hyderabad Campus",
+                    },
+                    {
+                      year: 2022,
+                      event:
+                        "Software Internship at Shris Infotech, developed face recognition app",
+                    },
+                    {
+                      year: 2023,
+                      event:
+                        "Published research on Neural Radiance Fields and Remote Drone Surveillance",
+                    },
+                    {
+                      year: 2024,
+                      event:
+                        "Technical Internship at Cisco, Distributed Systems organization",
+                    },
+                  ].map((item, index) => (
                     <motion.div
-                      key={year}
+                      key={item.year}
                       initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -202,9 +223,9 @@ const Home = () => {
                       >
                         <div className="bg-[#1A2430] p-4 rounded-lg shadow-md">
                           <h4 className="text-xl font-bold text-[#FF6720]">
-                            {year}
+                            {item.year}
                           </h4>
-                          <p className="text-[#A4C3CB]">{`Career milestone ${index + 1} - Lorem ipsum dolor sit amet, consectetur adipiscing elit.`}</p>
+                          <p className="text-[#A4C3CB]">{item.event}</p>
                         </div>
                       </div>
                       <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#FF6720] border-4 border-[#133C8C]"></div>
@@ -225,10 +246,10 @@ const Home = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-[#FF6720]"
-            style={{ fontFamily: "'Urban Decay', sans-serif" }}
+            className="text-5xl font-bold mb-12 text-[#FF6720] text-center"
+            style={{ fontFamily: "'Porsche Next', sans-serif" }}
           >
-            PROJECTS
+            PROJECT GARAGE
           </motion.h2>
 
           <div className="mb-8 flex justify-center space-x-4">
@@ -259,125 +280,20 @@ const Home = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-[#FF6720]"
-            style={{ fontFamily: "'Urban Decay', sans-serif" }}
+            className="text-5xl font-bold mb-12 text-[#FF6720] text-center"
+            style={{ fontFamily: "'Porsche Next', sans-serif" }}
           >
-            TECHNICAL SKILLS
+            TECHNICAL SPECS
           </motion.h2>
-
           <SkillsSection />
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-[#121820] text-[#E0E0E0]">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-[#FF6720]"
-            style={{ fontFamily: "'Urban Decay', sans-serif" }}
-          >
-            GET IN TOUCH
-          </motion.h2>
+      {/* Publications Section */}
+      <PublicationsSection />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <form className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border-2 border-[#2A3A4A] bg-[#1A2430] text-[#E0E0E0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF6720] focus:border-transparent transition-all"
-                    placeholder="Your Name"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border-2 border-[#2A3A4A] bg-[#1A2430] text-[#E0E0E0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF6720] focus:border-transparent transition-all"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={5}
-                    className="w-full px-4 py-3 border-2 border-[#2A3A4A] bg-[#1A2430] text-[#E0E0E0] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF6720] focus:border-transparent transition-all"
-                    placeholder="Your message here..."
-                  ></textarea>
-                </div>
-
-                <Button className="w-full bg-[#FF6720] hover:bg-[#FF6720]/80 text-white py-4">
-                  <motion.span
-                    initial={{ opacity: 1 }}
-                    whileHover={{
-                      opacity: [1, 0.8, 1],
-                      transition: { duration: 0.3, repeat: Infinity },
-                    }}
-                  >
-                    START IGNITION
-                  </motion.span>
-                </Button>
-              </form>
-            </div>
-
-            {/* 3D Porsche Configurator Placeholder */}
-            <div className="bg-[#1A2430] rounded-lg overflow-hidden relative h-[500px] shadow-xl">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-[#F0F0F0]">
-                  <p className="text-xl font-bold mb-4">
-                    3D Porsche Configurator
-                  </p>
-                  <p className="text-sm text-[#A4C3CB]">
-                    Interactive 3D model will load here
-                  </p>
-                </div>
-              </div>
-
-              {/* Color Selection */}
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-[#0A0F16]/80 backdrop-blur-sm p-4 rounded-lg shadow-lg">
-                <p className="text-[#E0E0E0] text-sm mb-2">Select Color:</p>
-                <div className="flex space-x-3">
-                  {["#FF6720", "#1A2430", "#E0E0E0", "#A4C3CB", "#0057B7"].map(
-                    (color) => (
-                      <button
-                        key={color}
-                        className="w-8 h-8 rounded-full border-2 border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                        style={{ backgroundColor: color }}
-                      />
-                    ),
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Extra Curricular Section */}
+      <ExtraCurricular />
 
       {/* Footer */}
       <footer className="bg-[#0A0F16] text-[#E0E0E0] py-12">
@@ -402,16 +318,34 @@ const Home = () => {
             </div>
 
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-[#FF6720] transition-colors">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FF6720] transition-colors"
+              >
                 <Github size={24} />
               </a>
-              <a href="#" className="hover:text-[#FF6720] transition-colors">
+              <a
+                href="https://www.linkedin.com/in/abhinav-jagan-polimera-411b431b1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FF6720] transition-colors"
+              >
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="hover:text-[#FF6720] transition-colors">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FF6720] transition-colors"
+              >
                 <Instagram size={24} />
               </a>
-              <a href="#" className="hover:text-[#FF6720] transition-colors">
+              <a
+                href="mailto:abhinavpolimera@gmail.com"
+                className="hover:text-[#FF6720] transition-colors"
+              >
                 <Mail size={24} />
               </a>
             </div>

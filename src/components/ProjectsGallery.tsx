@@ -19,18 +19,19 @@ const ProjectsGallery = () => {
   const [projects, setProjects] = useState<Project[]>([
     {
       id: "1",
-      title: "Racing Dashboard UI",
+      title: "Playlistify",
       description:
-        "High-performance analytics dashboard with real-time data visualization",
+        "Web application that converts Spotify's liked songs into personalized playlists",
       category: "Carrera",
       image:
-        "https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?w=800&q=80",
+        "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?w=800&q=80",
       link: "#",
     },
     {
       id: "2",
-      title: "Automotive E-commerce",
-      description: "Luxury car parts online store with 3D product previews",
+      title: "Event Scheduler",
+      description:
+        "Backend system with multi-user login for seamless appointment scheduling",
       category: "Targa",
       image:
         "https://images.unsplash.com/photo-1611224923853-80b173b8c5a5?w=800&q=80",
@@ -38,12 +39,23 @@ const ProjectsGallery = () => {
     },
     {
       id: "3",
-      title: "Engine Diagnostics App",
-      description: "Complex system for real-time engine performance monitoring",
+      title: "Remote Drone Surveillance",
+      description:
+        "ML system preventing security threats using drones and computer vision",
+      category: "Turbo",
+      image:
+        "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&q=80",
+      link: "https://www.researchgate.net/publication/377547504_Detection_of_Suspicious_Activities_at_Remote_Locations_by_using_UAVs_and_Computer_Vision",
+    },
+    {
+      id: "4",
+      title: "Neural Radiance Fields",
+      description:
+        "Performance assessment of NeRF and Photogrammetry for 3D reconstruction",
       category: "Turbo",
       image:
         "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
-      link: "#",
+      link: "https://www.researchgate.net/publication/378826735_Performance_Assessment_of_Neural_Radiance_Fields_NeRF_and_Photogrammetry_for_3D_Reconstruction_of_Man-Made_and_Natural_Features",
     },
   ]);
 
@@ -61,32 +73,14 @@ const ProjectsGallery = () => {
 
   const filterCategories = [
     { id: "all", name: "All Projects", description: "View all work" },
-    { id: "Carrera", name: "Carrera", description: "High-Speed Projects" },
-    { id: "Targa", name: "Targa", description: "UI/UX Designs" },
-    { id: "Turbo", name: "Turbo", description: "Complex Systems" },
+    { id: "Carrera", name: "Carrera", description: "Web Development" },
+    { id: "Targa", name: "Targa", description: "Backend Systems" },
+    { id: "Turbo", name: "Turbo", description: "Research & ML" },
   ];
 
   return (
     <section className="w-full py-20 bg-[#121820]" id="projects">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
-        >
-          <h2
-            className="text-5xl font-bold mb-4 text-[#E0E0E0]"
-            style={{ fontFamily: "Poppins, sans-serif", letterSpacing: "1px" }}
-          >
-            PROJECT GARAGE
-          </h2>
-          <p className="text-xl text-[#A4C3CB] max-w-2xl mx-auto">
-            A collection of my finest engineering work, from high-performance
-            applications to precision-crafted interfaces.
-          </p>
-        </motion.div>
-
         <div className="mb-10">
           <Tabs defaultValue="all" className="w-full">
             <div className="flex justify-center mb-8">
